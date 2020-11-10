@@ -4,13 +4,15 @@ import MessageBox from '../components/MessageBox'
 import Ratings from '../components/Ratings'
 
 export default function ProductScreen() {
-    return (
+    return(
     <div>
-      {loading ? (
+      {
+        loading ? (
         <LoadingBox></LoadingBox>
       ) : error ? (
         <MessageBox variant="danger">{error}</MessageBox>
-      ) : (
+      ) : 
+      (
         <div>
           <link to="/">Back to result</link>
           <div className="row top">
@@ -67,8 +69,7 @@ export default function ProductScreen() {
                   </div>
                   </div>
                   </div>
+                 )}
+                 </div>
                  )
-                 }
-                </div>
-                )
-                }
+    }
