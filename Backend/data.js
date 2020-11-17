@@ -23,7 +23,6 @@ const data = {
 	],
 	products: [
 		{
-			_id: '1',
 			name: 'Nike Slim Shirt',
 			category: 'Shirts',
 			image: '/images/p1.jpg',
@@ -34,7 +33,6 @@ const data = {
 			description: 'High quality product',
 		},
 		{
-			_id: '2',
 			name: 'Nike Slim Shirt',
 			category: 'Shirts',
 			image: '/images/p2.jpg',
@@ -45,7 +43,6 @@ const data = {
 			description: 'High quality product',
 		},
 		{
-			_id: '3',
 			name: 'Nike Slim Shirt',
 			category: 'Shirts',
 			image: '/images/p3.jpg',
