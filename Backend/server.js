@@ -2,18 +2,20 @@ import express from 'express';
 import mongoose from 'mongoose';
 import userRouter from './routers/userRouter.js';
 import productRouter from './routers/productRouter.js';
+import dotenv from 'dotenv';
 
+dotenv.config();
 const app = express();
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
-mongoose.connect(
-	process.env.MONGODB_URL ||
-		'mongodb+srv://yashaqua:MMxYFFu7PKqp4l50@cluster0.ytuke.mongodb.net/<dbname>?retryWrites=true&w=majority',
-	{
-		useNewUrlParser: true,
-		useUnifiedTopology: true,
-		useCreateIndex: true,
-	}
-);
+mongoose.connect(process.env.MONGODB_URL, {
+	useNewUrlParser: true,
+	useUnifiedTopology: true,
+	useCreateIndex: true,
+});
+
+console.log('DB connected');
 
 // app.get('/api/products/:id', (req, res) => {
 // 	const product = data.products.find((x) => x._id === req.params.id);
