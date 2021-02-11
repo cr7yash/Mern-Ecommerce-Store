@@ -4,18 +4,18 @@ import LoadingBox from '../components/LoadingBox';
 import { Link } from 'react-router-dom';
 import { detailsProduct } from '../actions/productActions';
 import MessageBox from '../components/MessageBox';
-import Rating from '../components/Rating';
+import Ratings from '../components/Ratings';
 
 export default function ProductScreen(props) {
 	const dispatch = useDispatch();
 	const productId = props.match.params.id;
-	const [Qty, setQty] = useState(1);
+	const [qty, setQty] = useState(1);
 	const productDetails = useSelector((state) => state.productDetails);
 	const { loading, error, product } = productDetails;
 
-	useEffect(() => {
-		dispatch(detailsProduct(productId));
-	}, [dispatch, productId]);
+	// useEffect(() => {
+	// 	dispatch(detailsProduct(productId));
+	// }, [dispatch, productId]);
 
 	const addToCartHandler = () => {
 		props.history.push(`/cart/${productId}?qty=${qty}`);
@@ -43,10 +43,10 @@ export default function ProductScreen(props) {
 									<h1>{product.name}</h1>
 								</li>
 								<li>
-									<Rating
+									<Ratings
 										rating={product.rating}
 										numReviews={product.numReviews}
-									></Rating>
+									></Ratings>
 								</li>
 								<li>Pirce : ${product.price}</li>
 								<li>
