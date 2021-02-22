@@ -51,7 +51,7 @@ export default function SignInScreen(props) {
 					/>
 				</div>
 				<div>
-					<label htmlFor='password'>Email Address</label>
+					<label htmlFor='password'>Password</label>
 					<input
 						type='password'
 						id='password'
@@ -70,7 +70,9 @@ export default function SignInScreen(props) {
 					<label />
 					<div>
 						New Customer ?
-						<Link to='/register'>Create your account</Link>
+						<Link to={`/signin/redirect=${redirect}`}>
+							Create your account
+						</Link>
 					</div>
 				</div>
 			</form>
