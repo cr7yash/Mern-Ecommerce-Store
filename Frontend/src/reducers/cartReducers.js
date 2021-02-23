@@ -42,7 +42,11 @@ export const cartReducer = (state = { cartItems: [] }, action) => {
 				...state,
 				paymentMethod: action.payload,
 			};
-
+		case CART_EMPTY:
+			return {
+				...state,
+				cartItems: [],
+			};
 		default:
 			return state;
 	}
