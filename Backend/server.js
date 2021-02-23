@@ -3,6 +3,7 @@ import mongoose from 'mongoose';
 import userRouter from './routers/userRouter.js';
 import productRouter from './routers/productRouter.js';
 import dotenv from 'dotenv';
+import orderRouter from './routers/orderRouter.js';
 
 dotenv.config();
 const app = express();
@@ -33,6 +34,7 @@ console.log('DB connected');
 app.use('/api/products', productRouter);
 
 app.use('/api/users', userRouter);
+app.use('/api/orders', orderRouter);
 app.get('/', (req, res) => {
 	res.send('Server is ready');
 });
